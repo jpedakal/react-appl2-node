@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 const get_article = require('./api/get_article');
 const post_article = require('./api/post_article');
+const get_all_article = require('./api/get_All_article');
 
 // middleware
 app.use(bodyParser.json());
@@ -17,6 +18,7 @@ app.use(function (req, res, next) {
 // routes
 app.use('/', get_article);
 app.use('/', post_article);
+app.use('/', get_all_article);
 
 const Port = 5000;
 app.listen(Port, () => {
