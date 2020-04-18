@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongo = require('../mongodb');
 
-router.get('/artist/:name', (req, res) => {
+router.get('/article/:name', (req, res) => {
     var collectionName = "article";
     var payload = { name: req.params.name }
 

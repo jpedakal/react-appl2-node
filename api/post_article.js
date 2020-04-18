@@ -2,7 +2,7 @@ const express = require('express');
 const router= express.Router();
 const mongo= require('../mongodb');
 
-router.post('/create_artist',(req,res)=>{
+router.post('/create_article',(req,res)=>{
    var data= req.body;
    var collectionName= "article";
 
