@@ -11,9 +11,9 @@ MongoClient.connect(URL, (err, client) => {
     db = client.db(dbName);
 });
 
-exports.fetchData = (collectionName) => {
+exports.fetchData = (collectionName, payload) => {
     return new Promise((reject, resolve) => {
-        db.collection(collectionName).find().toArray()
+        db.collection(collectionName).find(payload).toArray()
             .then(doc => resolve(doc))
             .catch(err => reject(err))
     })

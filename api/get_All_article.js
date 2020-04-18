@@ -3,8 +3,11 @@ const router = express.Router();
 const mongo = require('../mongodb');
 
 router.get('/articles', (req, res) => {
+    const payload= {
+        "author": req.query.author
+    }
     const collectionName = "article";
-    mongo.fetchData(collectionName)
+    mongo.fetchData(collectionName, payload)
         .then(doc => res.json(doc))
         .catch(err => res.json(err))
 });
