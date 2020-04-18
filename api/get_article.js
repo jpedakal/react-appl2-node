@@ -3,7 +3,7 @@ const router = express.Router();
 const mongo = require('../mongodb');
 
 router.get('/artist/:name', (req, res) => {
-    var collectionName = "artist";
+    var collectionName = "article";
     var payload = { name: req.params.name }
 
     mongo.fetchOnedata(collectionName, payload)

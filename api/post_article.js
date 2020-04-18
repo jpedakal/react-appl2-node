@@ -4,7 +4,7 @@ const mongo= require('../mongodb');
 
 router.post('/create_artist',(req,res)=>{
    var data= req.body;
-   var collectionName= "artist";
+   var collectionName= "article";
 
    mongo.createData(collectionName, data)
        .then(result=> res.json(result))
