@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const artist = require('./api/artist');
-const get_artist = require('./api/get_artist');
-const artist_details= require('./api/artist_data');
+const get_article = require('./api/get_article');
+const post_article= require('./api/post_article');
 
 // middleware
 app.use(bodyParser.json());
@@ -15,9 +15,8 @@ app.use(function (req, res, next) {
 });
 
 // routes
-app.use('/', artist);
-app.use('/', get_artist);
-app.use('/',artist_details);
+app.use('/', get_article);
+app.use('/',post_article);
 
 const Port = 5000;
 app.listen(Port, () => {
